@@ -11,4 +11,9 @@
     <string name="google_plus">Google Plus</string>
     <string name="add">Add</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="name">Name</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="here_s_nyour_first_nstep_with_nus">Here’s\nyour first\nstep with \nus!</string>
+    <string name="login_hero">login_hero</string>
 </resources>
