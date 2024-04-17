@@ -94,7 +94,7 @@
             <TextView
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin"
-                android:onClick="onLoginClick"
+                android:onClick="reg"
                 android:text="@string/new_user_register_now"
                 android:textAlignment="center"
                 android:textColor="@color/themeColor"

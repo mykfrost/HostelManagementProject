@@ -1,6 +1,8 @@
 package com.example.hostelmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -18,6 +21,9 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
     EditText emailEditText, passwordEditText;
     Volley requestQue;
+    private static final String TAG = "RegisterUser";
+    private RequestQueue requestQueue;
+    private String registerUrl = "http://yourserver/register.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.editTextEmail);
         passwordEditText = findViewById(R.id.editTextPassword);
     }
-    public void login(View view) {
+    public void onLoginClick(View view) {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
-        String loginUrl = "http://127.0.0.1/Login/login.php";
+        String loginUrl = "https://pmenergies.co.ke/android/login.php";
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("email", email);
@@ -63,5 +69,10 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
         Volley.newRequestQueue(getApplicationContext()).add(jsonObjectRequest);
+    }
+
+    public void reg(View v){
+        Intent register = new Intent(getApplicationContext(),RegisterActivity.class);
+        startActivity(register);
     }
 }
